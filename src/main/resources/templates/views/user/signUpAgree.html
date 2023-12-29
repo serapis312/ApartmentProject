@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script defer th:src="@{/js/signUpAgree.js}"></script>
+        <title>회원가입 동의</title>
+    </head>
+    <body>
+    <!--/* 인증 헤더 */-->
+    <th:block th:insert="~{common/header::header}"></th:block>
+
+        <div>
+            <form name="regist" th:action="@{/user/signUp}">
+                <div>
+                    <input type="checkbox" name="check" value="서울 공동주택 아파트 이용약관"  /> 약관에 동의하셔야 합니다 (필수)
+                    <p>서울 공동주택 아파트 이용약관</p>
+                </div>
+                <div>
+                    <input type="checkbox" name="check" value="개인정보 수집 및 이용" /> 약관에 동의하셔야 합니다 (필수)
+                    <p>개인정보 수집 및 이용</p>
+                </div>
+                <input type="button" value="다음" onclick="checkAgree();">
+            </form>
+        </div>
+    </body>
+</html>
